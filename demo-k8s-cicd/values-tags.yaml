@@ -1,4 +1,4 @@
-api_image_tag: v6.0
+api_image_tag: v7.0
 dynamo_image_tag: v1.0
 webapp_image_tag: v1.0
 nodejs_image_tag: v1.0
