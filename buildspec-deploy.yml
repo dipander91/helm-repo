@@ -19,7 +19,7 @@ phases:
       - "aws eks --region $AWS_DEFAULT_REGION update-kubeconfig --name $CLUSTER_NAME"
   build: # Deploy using helm
     commands:  
-      - cd ${CODEBUILD_SRC_DIR}/helm/ && helm upgrade -i ${RELEASE_NAME} ./demo-k8s-cicd --values ./demo-k8s-cicd/values.yaml --values ./demo-k8s-cicd/values-tags.yaml --namespace $NAMESPACE
+      - cd ${CODEBUILD_SRC_DIR}/${HELM_REPO_NAME}/ && helm upgrade -i ${RELEASE_NAME} ./${HELM_CHART_NAME} --values ./${HELM_CHART_NAME}/values.yaml --values ./${HELM_CHART_NAME}/values-tags.yaml --namespace $NAMESPACE
 artifacts:
   files:
     - '**/*'
